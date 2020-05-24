@@ -2,7 +2,6 @@
 /* All Dependencies */
 const express   =   require('express');
 const dotenv    =   require('dotenv').config(); // To use Enviornment Variables
-const mongoose  =   require('mongoose');        // To use MongoDB
 const bodyparser=   require('body-parser');     
 const passport  =   require('passport');
 
@@ -22,6 +21,9 @@ app.use( bodyparser.json() );
 
 /* Initalizing Passport, Passport is a javascript library/middleware that allows us to perform authentication on routes */
 app.use(passport.initialize());
+
+/* Connecting to the MongoDB database */
+const connection= require('./utils/connection');
 
 /* Importing routes to use 
  * What is a Route ?
