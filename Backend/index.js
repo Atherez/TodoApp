@@ -21,6 +21,8 @@ app.use( bodyparser.json() );
 
 /* Initalizing Passport, Passport is a javascript library/middleware that allows us to perform authentication on routes */
 app.use(passport.initialize());
+// @Config for Strategy
+require('./utils/jwt_strategy')(passport);
 
 /* Connecting to the MongoDB database */
 const connection= require('./utils/connection');

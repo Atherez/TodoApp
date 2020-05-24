@@ -9,4 +9,8 @@ router.get('/',(req,res)=>{
     res.end("API is working fine");
 })
 
+
+/* Route for auths */
+router.use('/auth',require('./api/auth'));
+
 module.exports = router;
